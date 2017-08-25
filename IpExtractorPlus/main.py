@@ -1,10 +1,11 @@
 from PyQt5 import QtWidgets, uic
-import sys
+import sys, os
 
 class IpExtractorPlus(QtWidgets.QDialog):
     def __init__(self):
         super(IpExtractorPlus, self).__init__()
-        uic.loadUi(r"rsc\gui.ui", self)
+        path = os.path.join("rsc" + os.sep + "gui.ui")
+        uic.loadUi(path, self)
         
         self.pushButton_browse_input.clicked.connect(self.browseInput)
         self.pushButton_browse_output.clicked.connect(self.browseOutput)
